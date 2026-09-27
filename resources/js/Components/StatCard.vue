@@ -1,0 +1,1 @@
+<script setup>defineProps({label:String,value:[String,Number],hint:String,icon:Object})</script><template><div class="stat-card"><div class="stat-icon"><component :is="icon" :size="19"/></div><div><span>{{label}}</span><strong>{{value}}</strong><small>{{hint}}</small></div></div></template>

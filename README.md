@@ -1,65 +1,61 @@
 # ImpactPath — The Life Project
 
-A Laravel 12 + Vue 3 + Inertia.js + MySQL career-impact platform created for TASK 10.
+A Laravel 12 + Vue 3 + Inertia.js + MySQL career-growth prototype for TASK 10.
 
-## Core story
-Problem → Research → Idea → Execution → Real-world Test → Result → Learning → Future Plan
+**Project story:** Problem → Research → Idea → Execution → Real-world test → Result → Learning → Future plan.
+
+## Submission files
+
+- [Project report](docs/LIFE_PROJECT_REPORT.md)
+- [Presentation script and slide content](docs/TASK10_PRESENTATION.md)
+- [Real user-testing data template](docs/USER_TESTING_SHEET.csv)
 
 ## Requirements
-- PHP 8.2+
-- Composer
-- Node.js 20+
+
+- PHP 8.2+, Composer
+- Node.js 20+, npm
 - MySQL 8+
 
-## Installation (XAMPP / Windows)
-```bash
-git clone <your-repository-url>
-cd impactpath
+## Install (Windows / XAMPP)
+
+```powershell
 composer install
-copy .env.example .env
+Copy-Item .env.example .env
 php artisan key:generate
 ```
 
-Create a MySQL database named `impactpath`, then verify `.env`:
-```env
-DB_DATABASE=impactpath
-DB_USERNAME=root
-DB_PASSWORD=
-```
+Create a MySQL database named `impactpath`. Set `DB_DATABASE`, `DB_USERNAME`, and `DB_PASSWORD` in `.env`, then:
 
-Run:
-```bash
+```powershell
 php artisan migrate --seed
 npm install
-npm run dev
-```
-In another terminal:
-```bash
+npm run build
 php artisan serve
 ```
 
-Open `http://127.0.0.1:8000`.
+In a second terminal, run `npm run dev` while developing. Open `http://127.0.0.1:8000`.
 
 ### Demo login
+
 - Email: `demo@impactpath.test`
 - Password: `password`
 
-## Main modules
-- Dashboard — project journey and impact metrics
-- Research — evidence records and product impact
-- Prototype — participant feedback capture
-- Results — timed usability tests and automatic metrics
-- Future Plan — post-internship continuation and agency/career benefit
+This seeded credential is for local demonstration only. Change it before any public deployment.
 
-## Important submission note
-The seed database contains clearly labelled DEMO DATA so the UI is immediately usable. Before final submission, replace the demo participant rows with actual user-test evidence and include real screenshots/video.
+## What is implemented
 
-## Validation
-Run:
-```bash
-php artisan test
-npm run build
-```
+- Dashboard with real-evidence status and impact metrics
+- Research evidence create, edit and delete
+- Prototype feedback capture
+- Timed usability-test capture and result calculations
+- Future plan and agency/career benefit mapping
+- Authenticated project routes and server-side validation
+- Legacy demo fixtures are removed during seeding and excluded from real outcome metrics
 
-## Report
-See `docs/LIFE_PROJECT_REPORT.md`.
+## Important evidence status
+
+Real-person testing has not been completed in this repository. No sample participant or test results are seeded; any legacy demo rows are removed by the seeder and excluded from calculations. Follow the protocol in the report, use anonymous participant codes, get consent, run at least five sessions, and replace the pending result fields in the report and presentation.
+
+## Database changes
+
+`php artisan migrate --seed` creates the database schema and demo workspace. On an existing database, run `php artisan migrate` to add the demo-evidence flags; the migration identifies the existing seeded demo participant rows.

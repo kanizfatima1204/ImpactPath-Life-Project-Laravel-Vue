@@ -1,0 +1,3 @@
+<?php
+use Illuminate\Database\Migrations\Migration; use Illuminate\Database\Schema\Blueprint; use Illuminate\Support\Facades\Schema;
+return new class extends Migration { public function up(): void { Schema::create('research_items', function(Blueprint $table){$table->id();$table->string('title');$table->string('source_type');$table->text('summary');$table->text('finding');$table->text('impact')->nullable();$table->timestamps();}); } public function down(): void { Schema::dropIfExists('research_items'); } };
